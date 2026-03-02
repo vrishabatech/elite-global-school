@@ -1,4 +1,4 @@
-export default function Button({ children, variant = "primary" }) {
+export default function Button({ children, variant = "primary", className = "", ...props }) {
   const styles = {
     primary:
       "bg-brand-accent text-white hover:bg-brand-primary",
@@ -19,8 +19,11 @@ export default function Button({ children, variant = "primary" }) {
         font-secondary
         transition-colors duration-300
         focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary
+        ${props.disabled ? "opacity-50 cursor-not-allowed" : ""}
         ${styles[variant]}
+        ${className}
       `}
+      {...props}
     >
       {children}
     </button>

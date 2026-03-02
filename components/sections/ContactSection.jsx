@@ -34,15 +34,41 @@ const campuses = [
 
 export default function ContactSection() {
   const [activeCampus, setActiveCampus] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Form Data:", data);
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    try {
+      const response = await fetch("https://api.ayatiworks.com/api/v1/public/elite-global-school/contact_us/records", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-API-Key": "fa724d2d0e2b832193fb644c31dc0b2139858f9ecf211a4899377b92d15b2a6f",
+        },
+        body: JSON.stringify({ data }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        reset();
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const current = campuses[activeCampus];
@@ -108,11 +134,30 @@ export default function ContactSection() {
                     } rounded-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-brand-secondary transition-colors text-base`}
                 />
               </div>
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Button variant="primary" type="submit">
-                  Send
+              <div>
+                <textarea
+                  {...register("message", { required: true })}
+                  placeholder="Your Message *"
+                  rows={4}
+                  className={`w-full px-4 py-3 border ${errors.message ? "border-red-500" : "border-gray-200"
+                    } rounded-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-brand-secondary transition-colors text-base resize-y`}
+                />
+              </div>
+              <motion.div whileHover={{ scale: isSubmitting ? 1 : 1.02 }} whileTap={{ scale: isSubmitting ? 1 : 0.98 }}>
+                <Button variant="primary" type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : "Send"}
                 </Button>
               </motion.div>
+              {submitStatus === "success" && (
+                <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-green-600 mt-4 font-medium">
+                  Thank you! Your message has been sent successfully.
+                </motion.p>
+              )}
+              {submitStatus === "error" && (
+                <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-red-500 mt-4 font-medium">
+                  Something went wrong. Please try again later.
+                </motion.p>
+              )}
             </form>
 
             {/* Shared Contact Details */}
