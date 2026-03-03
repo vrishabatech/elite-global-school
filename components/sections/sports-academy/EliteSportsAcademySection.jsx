@@ -16,7 +16,7 @@ const programs = [
   {
     id: 2,
     title: "KARATE TRAINING",
-    image: "/assets/fac-1.webp",
+    image: "/assets/fac-1.jpg",
     description:
       "Focus on skill development, game IQ, and strength conditioning for all court positions.",
   },
@@ -38,7 +38,7 @@ const programs = [
   {
     id: 5,
     title: "TABLE TENNIS TRAINING",
-    image: "/assets/fac-5.png",
+    image: "/assets/fac-5.jpg",
     description:
       "High-speed training designed to improve reflex speed and spin techniques.",
   },

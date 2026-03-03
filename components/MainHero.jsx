@@ -54,7 +54,7 @@ export default function MainHero({
       </motion.div>
 
       {/* BREADCRUMB – BOTTOM LEFT */}
-      <div className="absolute bottom-6 left-6 z-10 flex items-center gap-2 text-lg font-medium text-brand-primary  drop-shadow-sm">
+      <div className="absolute bottom-6 left-6 z-10 flex items-center gap-2 text-lg font-medium text-white  drop-shadow-sm">
         <Link
           href="/"
           className="flex items-center gap-1 hover:text-brand-secondary transition-colors"
@@ -63,7 +63,7 @@ export default function MainHero({
           Home
         </Link>
         <span className="opacity-60">/</span>
-        <span className="text-brand-primary border-b border-transparent">
+        <span className="text-white border-b border-transparent">
           {title}
         </span>
       </div>

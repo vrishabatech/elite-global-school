@@ -110,7 +110,7 @@ export default function HeroSlider() {
       {/* 3. MINIMALIST PAGINATION */}
       <div className="absolute bottom-6 sm:bottom-12 left-0 right-0 z-30 hidden sm:flex items-center justify-center pointer-events-none">
         {/* Cinematic Slide Counter */}
-        <div className="text-brand-primary flex items-baseline gap-1 sm:gap-2 overflow-hidden h-10 bg-black/10 sm:bg-transparent px-2 sm:px-0 rounded-md backdrop-blur-sm sm:backdrop-blur-none pointer-events-auto">
+        <div className="text-white flex items-baseline gap-1 sm:gap-2 overflow-hidden h-10 bg-black/10 sm:bg-transparent px-2 sm:px-0 rounded-md backdrop-blur-sm sm:backdrop-blur-none pointer-events-auto">
           <motion.span
             key={index}
             initial={{ y: "100%" }}
@@ -119,7 +119,7 @@ export default function HeroSlider() {
           >
             0{index + 1}
           </motion.span>
-          <span className="text-brand-primary/60 text-lg sm:text-xl font-light">
+          <span className="text-white/60 text-lg sm:text-xl font-light">
             / 0{SLIDES.length}
           </span>
         </div>
