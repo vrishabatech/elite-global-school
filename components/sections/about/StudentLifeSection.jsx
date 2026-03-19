@@ -18,7 +18,7 @@ const DATA = [
     category: "ARTS & EXPRESSION",
     title: "Creative Excellence",
     description:
-      "Our vibrant arts program includes theater productions, orchestra, jazz band, and visual arts exhibitions that celebrate student creativity.",
+      "Our vibrant arts program includes painting, sketching, craft, design activities, and creative exhibitions that inspire imagination, self-expression, and artistic confidence in every learner.",
     image: "/assets/student-2.jpg", // Replace with your image path
   },
   {
