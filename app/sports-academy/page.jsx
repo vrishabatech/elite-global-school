@@ -4,6 +4,7 @@ import EliteSportsAcademySection from "@/components/sections/sports-academy/Elit
 import FacilitiesSection from "@/components/sections/sports-academy/FacilitiesSection";
 import PhilosophySection from "@/components/sections/sports-academy/PhilosophySection";
 import StudentAthleteSuccessSection from "@/components/sections/sports-academy/StudentAthleteSuccessSection";
+import WhyChooseSportsSection from "@/components/sections/sports-academy/WhyChooseSportsSection";
 
 /* =========================
    METADATA
@@ -27,6 +28,7 @@ export default function SportsAcademyPage() {
       <PhilosophySection />
       <EliteSportsAcademySection />
       <FacilitiesSection />
+      <WhyChooseSportsSection />
       <StudentAthleteSuccessSection />
     </>
   );

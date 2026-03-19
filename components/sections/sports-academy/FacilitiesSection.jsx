@@ -6,25 +6,68 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const facilities = [
   {
+    id: "archery",
+    title: "Archery",
+    subtitle: "Precision Training",
+    description:
+      "Professional archery range specifically designed for precision, focus, and technique development.",
+    image: "/assets/facilities-1.jpg",
+  },
+  {
+    id: "shooting",
+    title: "Shooting",
+    subtitle: "Standard Range",
+    description:
+      "Safe and controlled shooting range to practice marksmanship and concentration under expert guidance.",
+    image: "/assets/facilities-2.jpg",
+  },
+  {
+    id: "cricket",
+    title: "Cricket",
+    subtitle: "Practice Nets",
+    description:
+      "Dedicated cricket nets and pitch for batting, bowling, and fielding drills to hone cricketing skills.",
+    image: "/assets/facilities-3.png",
+  },
+  {
     id: "football",
-    title: "Football Turf",
+    title: "Football",
     subtitle: "FIFA Standard",
-    description: "Professional-grade turf designed for skill development, stamina building, and tactical teamwork training.",
-    image: "/assets/facilities-1.png",
+    description:
+      "Professional-grade turf designed for skill development, stamina building, and tactical teamwork.",
+    image: "/assets/facilities-4.png",
+  },
+  {
+    id: "tennis",
+    title: "Tennis",
+    subtitle: "Synthetic Courts",
+    description:
+      "High-quality tennis courts designed for optimal grip, bounce, and all-weather gameplay.",
+    image: "/assets/facilities-5.jpg",
   },
   {
     id: "martial-arts",
-    title: "Martial Arts Arena",
+    title: "Martial Arts",
     subtitle: "Indoor Dojo",
-    description: "Spacious, climate-controlled indoor dojo equipped with professional safety mats and striking equipment.",
-    image: "/assets/facilities-2.png",
+    description:
+      "Spacious, climate-controlled indoor dojo equipped with professional safety mats.",
+    image: "/assets/facilities-6.png",
   },
   {
-    id: "multi-sport",
-    title: "Multi-Sport Turf",
-    subtitle: "Versatile Arena",
-    description: "A dynamic indoor arena adaptable for cricket, badminton, and general fitness conditioning.",
-    image: "/assets/facilities-3.png",
+    id: "self-defence",
+    title: "Self-Defence",
+    subtitle: "Tactical Arena",
+    description:
+      "Specialized zones for teaching crucial self-defense techniques, building confidence and physical resilience.",
+    image: "/assets/facilities-7.jpg",
+  },
+  {
+    id: "skating",
+    title: "Skating",
+    subtitle: "Skating Rink",
+    description:
+      "Smooth, well-maintained skating rink perfect for roller skating practice, balance, and agility training.",
+    image: "/assets/facilities-8.jpg",
   },
 ];
 
@@ -45,7 +88,6 @@ export default function FacilitiesSection() {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        
         {/* --- HEADER SECTION --- */}
         <div className="mb-16">
           <motion.div
@@ -77,7 +119,8 @@ export default function FacilitiesSection() {
             transition={{ delay: 0.2 }}
             className="text-gray-500 text-lg max-w-2xl leading-relaxed"
           >
-            Train in professional-grade environments designed for peak performance.
+            Train in professional-grade environments designed for peak
+            performance.
           </motion.p>
         </div>
 
@@ -122,7 +165,6 @@ export default function FacilitiesSection() {
 
                 {/* Content Layer */}
                 <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end">
-                  
                   {/* 1. ACTIVE STATE TEXT (Horizontal) */}
                   <AnimatePresence mode="popLayout">
                     {isActive && (
@@ -178,7 +220,6 @@ export default function FacilitiesSection() {
                       </motion.div>
                     )}
                   </AnimatePresence>
-
                 </div>
               </motion.div>
             );
