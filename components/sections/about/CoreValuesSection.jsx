@@ -112,11 +112,7 @@ export default function CoreValuesSection() {
               {/* Render separator for all items EXCEPT the last one */}
               {index !== VALUES.length - 1 && (
                 <div 
-                  className="absolute bg-gray-200
-                  /* MOBILE: Bottom Horizontal Line */
-                  bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-px
-                  /* DESKTOP: Right Vertical Line */
-                  lg:top-1/2 lg:right-0 lg:left-auto lg:bottom-auto lg:-translate-y-1/2 lg:w-px lg:h-[60%]"
+                  className="absolute bg-gray-200 bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-px lg:top-1/2 lg:right-0 lg:left-auto lg:bottom-auto lg:-translate-y-1/2 lg:w-px lg:h-[60%]"
                 />
               )}
             </motion.div>
