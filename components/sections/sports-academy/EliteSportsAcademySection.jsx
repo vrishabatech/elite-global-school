@@ -42,6 +42,48 @@ const programs = [
     description:
       "High-speed training designed to improve reflex speed and spin techniques.",
   },
+  {
+    id: 6,
+    title: "SKATING TRAINING",
+    image: "/assets/fac-6.jpg",
+    description:
+      "Smooth skating sessions improve balance, coordination, speed, control, and endurance.",
+  },
+  {
+    id: 7,
+    title: "ARCHERY TRAINING",
+    image: "/assets/fac-7.jpg",
+    description:
+      "Precision-based practice sharpens focus, accuracy, patience, control, and mental discipline.",
+  },
+  {
+    id: 8,
+    title: "SHOOTING GAME TRAINING",
+    image: "/assets/fac-8.jpg",
+    description:
+      "Target practice develops concentration, accuracy, reflexes, control, and steady focus.",
+  },
+  {
+    id: 9,
+    title: "TENNIS TRAINING",
+    image: "/assets/fac-9.jpg",
+    description:
+      "Court training improves agility, timing, coordination, strength, endurance, and strategy.",
+  },
+  {
+    id: 10,
+    title: "SELF DEFENCE TRAINING",
+    image: "/assets/fac-10.jpg",
+    description:
+      "Practical techniques build confidence, awareness, strength, quick reflexes, and safety skills.",
+  },
+  {
+    id: 11,
+    title: "MARTIAL ARTS TRAINING",
+    image: "/assets/fac-11.jpg",
+    description:
+      "Structured training builds strength, discipline, agility, focus, and confidence daily.",
+  },
 ];
 
 export default function EliteSportsAcademySection() {
