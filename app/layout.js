@@ -1,4 +1,18 @@
 import { Teachers, Manrope } from "next/font/google";
+
+const teachers = Teachers({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-teachers",
+  display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-manrope",
+  display: "swap",
+});
 import Script from "next/script";
 import "./globals.css";
 
@@ -80,11 +94,7 @@ export default function RootLayout({ children }) {
         </Script>
       </head>
       <body
-        className={[
-          "antialiased",
-          "bg-[color:var(--color-background)]",
-          "text-[color:var(--color-foreground)]",
-        ].join(" ")}
+        className={`antialiased bg-[color:var(--color-background)] text-[color:var(--color-foreground)] ${teachers.variable} ${manrope.variable}`}
       >
         <Header />
         <main>{children}</main>

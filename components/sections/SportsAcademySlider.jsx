@@ -83,7 +83,7 @@ export default function SportsAcademyCard() {
                     height={740}
                     unoptimized
                     className="w-full h-140 object-cover"
-                    priority
+                    priority={index === 0}
                   />
 
                   {/* IMAGE LABEL */}
