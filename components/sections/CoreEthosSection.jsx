@@ -11,7 +11,7 @@ const ITEMS = [
     tag: "Future Ready",
     title: "Empower",
     desc: "As a committed 21st century learning organisation, Elite Global School is focusing on cultivating a diverse, effective program.",
-    image: "/assets/ethos-6.jpg",
+    image: "/assets/ethos-6.webp",
     color: "#FF6B6B",
   },
   {
@@ -19,7 +19,7 @@ const ITEMS = [
     tag: "Value Based",
     title: "Learn",
     desc: "We believe in a value-based education that accentuates Ethics, Empathy, Esteem and Collaboration in learning and life.",
-    image: "/assets/ethos-2.jpg",
+    image: "/assets/ethos-2.webp",
     color: "#4ECDC4",
   },
   {
@@ -27,7 +27,7 @@ const ITEMS = [
     tag: "Creative Thinking",
     title: "Invoke",
     desc: "Enrich programs to support the teaching process and invoke the creativity and hidden skills of every student.",
-    image: "/assets/ethos-3.jpg",
+    image: "/assets/ethos-3.webp",
     color: "#FFE66D",
   },
   {
@@ -35,7 +35,7 @@ const ITEMS = [
     tag: "Hidden Potential",
     title: "Treasure",
     desc: "To kindle the rich treasures hidden inside every child and motivate them with inspiring facilitators and learning methods.",
-    image: "/assets/ethos-4.jpg",
+    image: "/assets/ethos-4.webp",
     color: "#1A535C",
   },
   {
@@ -43,7 +43,7 @@ const ITEMS = [
     tag: "Social Responsibility",
     title: "Enrich",
     desc: "We foster social responsibility to help learners play an active role in the community while upholding inclusive values and principles.",
-    image: "/assets/ethos-5.jpg",
+    image: "/assets/ethos-5.webp",
     color: "#FF6B6B",
   },
 ];
@@ -141,12 +141,13 @@ export default function CoreEthosSection() {
             >
               <div className="w-20 h-20 sm:w-28 sm:h-28 relative drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]">
                 <Image
-                  src="/assets/ball.png"
+                  src="/assets/ball.webp"
                   alt="Football"
                   fill
                   unoptimized
+                  loading="lazy"
+                  sizes="(max-width: 640px) 80px, 112px"
                   className="object-contain"
-                  priority
                 />
               </div>
             </motion.button>
@@ -227,6 +228,8 @@ export default function CoreEthosSection() {
                       alt={item.title}
                       fill
                       unoptimized
+                      loading="lazy"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover"
                     />
                     <motion.div

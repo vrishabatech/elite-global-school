@@ -28,7 +28,7 @@ export default function Footer() {
             width={160}
             height={44}
             className="h-24 w-auto mb-4 object-contain"
-            priority
+            loading="lazy"
           />
 
           <h4 className="font-primary text-lg text-brand-primary mb-2">
@@ -125,9 +125,12 @@ export default function Footer() {
             >
               <span className="flex items-center gap-2">
                 Designed & Developed by
-                <img
+                <Image
                   src="/ayati-logo-web.png"
                   alt="Ayatiworks"
+                  width={120}
+                  height={60}
+                  loading="lazy"
                   className="h-15 w-auto object-contain"
                 />
                 {/* <span className="text-[#b91c1c]">Team Ayatiworks</span> */}

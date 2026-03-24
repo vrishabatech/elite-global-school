@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const SLIDES = [
-  { desktop: "/banner/banner-4.jpg", mobile: "/banner/banner-mob-4.jpg" },
-  { desktop: "/banner/banner-2.jpg", mobile: "/banner/banner-mob-2.webp" },
+  { desktop: "/banner/banner-4.webp", mobile: "/banner/banner-mob-4.webp" },
+  { desktop: "/banner/banner-2.webp", mobile: "/banner/banner-mob-2.webp" },
   { desktop: "/banner/banner-1.webp", mobile: "/banner/banner-mob-1.webp" },
 ];
 
@@ -87,8 +87,10 @@ export default function HeroSlider() {
             alt={`Banner ${index + 1}`}
             fill
             priority={index === 0}
+            fetchPriority={index === 0 ? "high" : undefined}
             unoptimized
-            className=""
+            sizes="100vw"
+            className="object-cover"
           />
           {/* Subtle overlay to enhance the 3D depth during the turn */}
           <div className="absolute inset-0 bg-black/10 pointer-events-none" />

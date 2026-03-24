@@ -88,6 +88,11 @@ ErrorDocument 404 /404.html
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 
+  # Cache-Control for images
+  <FilesMatch "\.(jpg|jpeg|png|webp|avif|gif|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
   # Cache-Control for HTML
   <FilesMatch "\.html$">
     Header set Cache-Control "public, max-age=3600, must-revalidate"

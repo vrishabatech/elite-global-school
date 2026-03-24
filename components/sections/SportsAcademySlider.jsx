@@ -17,16 +17,16 @@ We thought of filling this gap by giving our children the opportunity for them t
 /* ONLY IMAGES SLIDE */
 const IMAGES = [
   { src: "/assets/fac-3.webp", label: "FOOTBALL TRAINING" },
-  { src: "/assets/fac-1.jpg", label: "KARATE TRAINING" },
+  { src: "/assets/fac-1.webp", label: "KARATE TRAINING" },
   { src: "/assets/fac-2.webp", label: "SILAMBAM TRAINING" },
-  { src: "/assets/fac-4.jpeg", label: "CRICKET TRAINING" },
-  { src: "/assets/fac-5.jpg", label: "TABLE TENNIS TRAINING" },
-  { src: "/assets/fac-6.jpg", label: "SKATING TRAINING" },
-  { src: "/assets/fac-7.jpg", label: "ARCHERY TRAINING" },
-  { src: "/assets/fac-8.jpg", label: "SHOOTING GAME TRAINING" },
-  { src: "/assets/fac-9.jpg", label: "TENNIS TRAINING" },
-  { src: "/assets/fac-10.jpg", label: "SELF DEFENCE TRAINING" },
-  { src: "/assets/fac-11.jpg", label: "MARTIAL ARTS TRAINING" },
+  { src: "/assets/fac-4.webp", label: "CRICKET TRAINING" },
+  { src: "/assets/fac-5.webp", label: "TABLE TENNIS TRAINING" },
+  { src: "/assets/fac-6.webp", label: "SKATING TRAINING" },
+  { src: "/assets/fac-7.webp", label: "ARCHERY TRAINING" },
+  { src: "/assets/fac-8.webp", label: "SHOOTING GAME TRAINING" },
+  { src: "/assets/fac-9.webp", label: "TENNIS TRAINING" },
+  { src: "/assets/fac-10.webp", label: "SELF DEFENCE TRAINING" },
+  { src: "/assets/fac-11.webp", label: "MARTIAL ARTS TRAINING" },
 ];
 
 export default function SportsAcademyCard() {
@@ -82,8 +82,9 @@ export default function SportsAcademyCard() {
                     width={640}
                     height={740}
                     unoptimized
+                    loading="lazy"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="w-full h-140 object-cover"
-                    priority={index === 0}
                   />
 
                   {/* IMAGE LABEL */}

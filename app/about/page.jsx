@@ -20,8 +20,8 @@ export default function AboutPage() {
     <>
       <MainHero
         title="About"
-        imageDesktop="/banner/about-banner.jpg"
-        imageMobile="/banner/about-banner-mob.jpg"
+        imageDesktop="/banner/about-banner.webp"
+        imageMobile="/banner/about-banner-mob.webp"
       />
       <PrincipalMessage />
       <VisionMissionSection />

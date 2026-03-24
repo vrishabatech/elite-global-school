@@ -22,8 +22,8 @@ export default function SportsAcademyPage() {
     <>
       <MainHero
         title="Sports Academy"
-        imageDesktop="/banner/sports-banner.jpg"
-        imageMobile="/banner/sports-banner-mob.jpg"
+        imageDesktop="/banner/sports-banner.webp"
+        imageMobile="/banner/sports-banner-mob.webp"
       />
       <PhilosophySection />
       <EliteSportsAcademySection />

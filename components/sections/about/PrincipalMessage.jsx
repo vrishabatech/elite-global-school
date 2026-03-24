@@ -118,13 +118,14 @@ export default function PrincipalMessage() {
                      3. Added `h-auto w-full` to make it responsive
                   */}
                 <Image
-                  src="/assets/about-01.png"
+                  src="/assets/about-01.webp"
                   alt="Principal Dr. Eleanor Vance"
                   width={600}
                   height={800}
                   unoptimized
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="w-full h-auto object-contain"
-                  priority
                 />
               </motion.div>
             </motion.div>

@@ -8,7 +8,7 @@ const FEATURES = [
   {
     title: "Playground",
     desc: "Bright, focused spaces designed for creative play and physical development.",
-    image: "/assets/our-1.jpg",
+    image: "/assets/our-1.webp",
   },
   {
     title: "Classroom",
@@ -89,6 +89,8 @@ export default function UniquenessSection() {
                 alt={item.title}
                 fill
                 unoptimized
+                loading="lazy"
+                sizes="85vw"
                 className="object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/50 to-transparent" />
@@ -138,6 +140,8 @@ export default function UniquenessSection() {
                   alt={item.title}
                   fill
                   unoptimized
+                  loading="lazy"
+                  sizes="520px"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div

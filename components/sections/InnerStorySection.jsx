@@ -30,11 +30,12 @@ export default function InnerStorySection() {
         >
           {/* DESKTOP IMAGE */}
           <Image
-            src="/assets/high.jpg"
+            src="/assets/high.webp"
             alt="Elite Global School Vision"
             fill
-            priority
+            loading="lazy"
             unoptimized
+            sizes="100vw"
             className="hidden md:block object-cover"
           />
 
@@ -43,8 +44,9 @@ export default function InnerStorySection() {
             src="/assets/high-mob.jpg"
             alt="Elite Global School Vision Mobile"
             fill
-            priority
+            loading="lazy"
             unoptimized
+            sizes="100vw"
             className="block md:hidden object-cover"
           />
         </motion.div>

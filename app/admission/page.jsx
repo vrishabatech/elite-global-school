@@ -17,7 +17,7 @@ export default function FeeStructurePage() {
     <>
       <MainHero
         title="Admission"
-        imageDesktop="/banner/addmission-banner.jpg"
+        imageDesktop="/banner/addmission-banner.webp"
         imageMobile="/banner/addmission-banner-mob.jpg"
       />
       <FeeStructure />

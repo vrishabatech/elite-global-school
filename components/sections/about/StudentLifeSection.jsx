@@ -150,6 +150,8 @@ export default function StudentLifeSection() {
                     alt={item.title}
                     fill
                     unoptimized
+                    loading="lazy"
+                    sizes="(max-width: 640px) 85vw, (max-width: 1024px) 45vw, 31vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>

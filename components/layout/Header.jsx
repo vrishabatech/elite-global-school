@@ -65,7 +65,8 @@ export default function Header() {
           <button
             onClick={() => setOpen(!open)}
             className="lg:hidden flex flex-col gap-1.25"
-            aria-label="Toggle menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
           >
             <span className="w-6 h-0.5 bg-black" />
             <span className="w-6 h-0.5 bg-black" />

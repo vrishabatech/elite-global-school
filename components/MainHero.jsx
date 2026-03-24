@@ -22,7 +22,9 @@ export default function MainHero({
           alt={`${title} Banner`}
           fill
           priority
+          fetchPriority="high"
           unoptimized
+          sizes="100vw"
           className="object-cover"
         />
       </div>
@@ -34,7 +36,9 @@ export default function MainHero({
           alt={`${title} Banner`}
           fill
           priority
+          fetchPriority="high"
           unoptimized
+          sizes="100vw"
           className="object-cover"
         />
       </div>

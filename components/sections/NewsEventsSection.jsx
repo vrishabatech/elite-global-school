@@ -21,7 +21,7 @@ Alhamdulillah, this is the third year of this programme, where we had a huge num
     ],
     description_1: "For More Details Click the button below to join the group",
     ctaText: "Join Group",
-    image: "/assets/news-img-1.png",
+    image: "/assets/news-img-1.webp",
     ctaLink: "https://chat.whatsapp.com/DQAg6bYbsmtBURipaSACTY",
   },
   {
@@ -38,7 +38,7 @@ Karate.`,
       "6:30pm to 8:30pm",
     ],
     ctaText: "Join Group",
-    image: "/assets/news-img-2.png",
+    image: "/assets/news-img-2.webp",
     ctaLink: "https://chat.whatsapp.com/HomDoAnqvdfGQ8XDoqPggN",
   },
   {
@@ -54,7 +54,7 @@ Karate.`,
       "To Score more marks",
     ],
     ctaText: "Join Group",
-    image: "/assets/news-img-3.png",
+    image: "/assets/news-img-3.webp",
     ctaLink: "https://chat.whatsapp.com/GwaWSFj6wVd7GAngnyHkvo",
   },
 ];
@@ -110,6 +110,8 @@ export default function NewsEventsSection() {
                       alt={item.title}
                       fill
                       unoptimized
+                      loading="lazy"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 border-8 border-white/20 pointer-events-none"></div>

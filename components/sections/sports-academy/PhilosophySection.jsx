@@ -51,11 +51,12 @@ export default function PhilosophySection() {
             */}
             <div className="relative z-10 w-full aspect-auto min-h-[300px] md:min-h-[500px] overflow-hidden rounded-2xl">
               <Image
-                src="/assets/philosophy.png"
+                src="/assets/philosophy.webp"
                 alt="Kids holistic training"
                 fill
-                className="object-contain" // Ensures the whole image is visible without cropping
-                priority
+                className="object-contain"
+                loading="lazy"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 unoptimized
               />
             </div>

@@ -17,7 +17,7 @@ export default function ContactPage() {
     <>
       <MainHero
         title="Contact US"
-        imageDesktop="/banner/contact-banner.jpg"
+        imageDesktop="/banner/contact-banner.webp"
         imageMobile="/banner/contact-banner-mob.jpg"
       />
       <ContactSection />
