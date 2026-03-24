@@ -2,14 +2,14 @@ import { Teachers, Manrope } from "next/font/google";
 
 const teachers = Teachers({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-teachers",
   display: "swap",
 });
 
 const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-manrope",
   display: "swap",
 });
