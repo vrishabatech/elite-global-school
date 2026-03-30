@@ -124,9 +124,9 @@ export default function FacilitiesSection() {
           </motion.p>
         </div>
 
-        {/* --- EXPANDING CARDS --- */}
+        {/* --- DESKTOP VIEW (Expanding Cards) --- */}
         <div
-          className="flex flex-col lg:flex-row h-[600px] gap-6"
+          className="hidden lg:flex flex-row h-[600px] gap-6"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -138,7 +138,6 @@ export default function FacilitiesSection() {
                 key={facility.id}
                 layout
                 onClick={() => setActiveIndex(index)}
-                // Active: flex-3.5, Inactive: flex-1
                 className={`relative overflow-hidden cursor-pointer shadow-xl border border-gray-100 ${
                   isActive ? "flex-[3.5]" : "flex-[1]"
                 }`}
@@ -157,15 +156,15 @@ export default function FacilitiesSection() {
                     }`}
                   />
                   <div
-                    className={`absolute inset-0 duration-500 ${
-                      isActive ? "opacity-90" : "opacity-70"
+                    className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent duration-500 ${
+                      isActive ? "opacity-90" : "opacity-40"
                     }`}
                   ></div>
                 </div>
 
                 {/* Content Layer */}
-                <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end">
-                  {/* 1. ACTIVE STATE TEXT (Horizontal) */}
+                <div className="absolute inset-0 p-10 flex flex-col justify-end">
+                  {/* ACTIVE STATE TEXT (Horizontal) */}
                   <AnimatePresence mode="popLayout">
                     {isActive && (
                       <motion.div
@@ -175,17 +174,16 @@ export default function FacilitiesSection() {
                         transition={{ duration: 0.4 }}
                         className="w-full"
                       >
-                        <h3 className="text-3xl md:text-4xl font-bold text-white uppercase tracking-[0.4em] mb-2">
+                        <h3 className="text-4xl font-bold text-white uppercase tracking-[0.4em] mb-2">
                           {facility.title}
                         </h3>
                         <p className="text-brand-secondary font-semibold mb-3 text-sm tracking-wide">
                           {facility.subtitle}
                         </p>
-                        <p className="text-gray-200 text-base md:text-lg leading-relaxed max-w-lg mb-6">
+                        <p className="text-gray-200 text-lg leading-relaxed max-w-lg mb-6">
                           {facility.description}
                         </p>
 
-                        {/* Progress Bar */}
                         {!isPaused && (
                           <div className="w-full h-1 bg-white/20 overflow-hidden mt-4">
                             <motion.div
@@ -203,7 +201,7 @@ export default function FacilitiesSection() {
                     )}
                   </AnimatePresence>
 
-                  {/* 2. INACTIVE STATE TEXT (Vertical - Bottom to Top) */}
+                  {/* INACTIVE STATE TEXT (Vertical) */}
                   <AnimatePresence>
                     {!isActive && (
                       <motion.div
@@ -211,7 +209,6 @@ export default function FacilitiesSection() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        // CORRECTION: Absolute positioning with origin-bottom-left ensures it starts at bottom and reads up
                         className="absolute bottom-10 left-8 origin-bottom-left -rotate-90 whitespace-nowrap"
                       >
                         <h3 className="text-2xl font-bold text-white uppercase tracking-[0.2em]">
@@ -225,10 +222,97 @@ export default function FacilitiesSection() {
             );
           })}
         </div>
+
+        {/* --- MOBILE VIEW (Interactive Carousel) --- */}
+        <div className="lg:hidden">
+          <div className="relative overflow-hidden w-full">
+            <motion.div
+              drag="x"
+              dragConstraints={{ right: 0, left: -((facilities.length - 1) * 100) + "%" }}
+              onDragEnd={(e, { offset, velocity }) => {
+                const swipe = Math.abs(offset.x) > 50 || Math.abs(velocity.x) > 500;
+                if (swipe) {
+                  const direction = offset.x > 0 ? -1 : 1;
+                  setActiveIndex((prev) => Math.min(Math.max(0, prev + direction), facilities.length - 1));
+                }
+              }}
+              animate={{ x: `-${activeIndex * 100}%` }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="flex w-full"
+            >
+              {facilities.map((facility) => (
+                <div key={facility.id} className="min-w-full px-2">
+                  <div className="relative h-[450px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+                    <Image
+                      src={facility.image}
+                      alt={facility.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    
+                    <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="w-full"
+                      >
+                        <span className="inline-block px-3 py-1 bg-brand-secondary/20 backdrop-blur-md rounded-full text-brand-secondary text-xs font-bold uppercase tracking-wider mb-4 border border-brand-secondary/30">
+                          {facility.subtitle}
+                        </span>
+                        <h3 className="text-3xl font-bold text-white uppercase tracking-wider mb-3">
+                          {facility.title}
+                        </h3>
+                        <p className="text-gray-300 text-base leading-relaxed mb-6 line-clamp-3">
+                          {facility.description}
+                        </p>
+
+                        <div className="flex items-center gap-4">
+                           {/* Progress Indicator for current card */}
+                           <div className="flex-1 h-1 bg-white/20 rounded-full overflow-hidden">
+                              <motion.div
+                                key={activeIndex}
+                                initial={{ width: "0%" }}
+                                animate={{ width: "100%" }}
+                                transition={{
+                                  duration: DURATION / 1000,
+                                  ease: "linear",
+                                }}
+                                className="h-full bg-brand-secondary"
+                              />
+                           </div>
+                           <span className="text-white/60 text-xs font-mono">
+                             0{activeIndex + 1} / 0{facilities.length}
+                           </span>
+                        </div>
+                      </motion.div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Pagination Indicators */}
+          <div className="flex justify-center items-center gap-3 mt-8">
+            {facilities.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                className={`transition-all duration-300 rounded-full ${
+                  activeIndex === index 
+                    ? "w-8 h-2 bg-brand-secondary" 
+                    : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* --- BACKGROUND WATERMARK --- */}
-      <div className="absolute bottom-[1%] -right-[1%]  pointer-events-none select-none z-0">
+      <div className="absolute bottom-[1%] -right-[1%] pointer-events-none select-none z-0">
         <span className="text-5xl md:text-5xl lg:text-9xl font-bold text-gray-100/80 leading-none block">
           Sport
         </span>

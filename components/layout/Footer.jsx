@@ -76,10 +76,10 @@ export default function Footer() {
 
           <p className="text-lg mt-2">
             <Link
-              href="tel:+919948070404"
+              href="tel:+919498070404"
               className="text-text-secondary hover:text-brand-primary transition"
             >
-              +91 99480 70404
+              +91 94980 70404
             </Link>
           </p>
         </FooterColumn>
