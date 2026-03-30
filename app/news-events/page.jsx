@@ -1,8 +1,4 @@
 import MainHero from "@/components/MainHero";
-import CoreValuesSection from "@/components/sections/about/CoreValuesSection";
-import PrincipalMessage from "@/components/sections/about/PrincipalMessage";
-import StudentLifeSection from "@/components/sections/about/StudentLifeSection";
-import VisionMissionSection from "@/components/sections/about/VisionMissionSection";
 import NewsEventsSection from "@/components/sections/NewsEventsSection";
 
 /* =========================

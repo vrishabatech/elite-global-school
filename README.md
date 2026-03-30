@@ -43,10 +43,13 @@ Elite Global School is a premium educational institution's website, built with m
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone [repository-url]
    ```
+
 2. Install dependencies:
+
    ```bash
    npm install
    ```
@@ -54,17 +57,21 @@ Elite Global School is a premium educational institution's website, built with m
 ### Development
 
 Run the development server:
+
 ```bash
 npm run dev
 ```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ### Image Compression
 
 To optimize images in the `/public/assets` and `/public/banner` directories:
+
 ```bash
 node scripts/compress-images.mjs
 ```
+
 *Note: Originals will be backed up to `_backup_*` directories.*
 
 ## 🚀 Deployment
@@ -80,4 +87,4 @@ The project is optimized for deployment on [Vercel](https://vercel.com/):
 This project is private and intended for Elite Global School.
 
 ---
-Built with ❤️ for [Elite Global School](https://eliteglobalschools.com)
+Built with ❤️ for [Ayatiworks Technologies](https://ayatiworks.com) Rubankumar S
