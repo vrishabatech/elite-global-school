@@ -5,7 +5,7 @@ import Link from "next/link";
 import Button from "@/components/ui/Button";
 
 export default function ActivitiesVideoSection() {
-  const videoId = "3x4DAzlxsr8";
+  const videoId = "eu-Jp9UEPIg";
 
   // NOTE: mute=1 is REQUIRED for autoplay to work in 99% of browsers.
   // I have added 'controls=1' so users can easily turn the sound on.
@@ -14,7 +14,6 @@ export default function ActivitiesVideoSection() {
   return (
     <section className="relative bg-white py-10 overflow-hidden">
       <div className="text-center">
-
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +43,6 @@ export default function ActivitiesVideoSection() {
               className="absolute inset-0 w-full h-full border-0"
             />
           </div>
-
         </motion.div>
 
         <motion.div
@@ -54,13 +52,13 @@ export default function ActivitiesVideoSection() {
           viewport={{ once: true }}
           className="mt-10 flex justify-center px-4"
         >
-          <Link href="https://www.youtube.com/channel/UCZpuYEecLKm6TAA-duHzSRQ/videos" target="_blank">
-            <Button variant="primary">
-              View more videos →
-            </Button>
+          <Link
+            href="https://www.youtube.com/channel/UCZpuYEecLKm6TAA-duHzSRQ/videos"
+            target="_blank"
+          >
+            <Button variant="primary">View more videos →</Button>
           </Link>
         </motion.div>
-
       </div>
     </section>
   );
